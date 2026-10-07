@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Видеоразбор: Биомеханика аджилити</title>
+    <!-- Подключаем стильные шрифты -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lora:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --accent: #f59e0b;
+            --text: #2c3e50;
+            --bg: #f0f4f8;
+            --white: #ffffff;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            background-color: var(--bg); 
+            color: var(--text); 
+            line-height: 1.7; 
+            font-family: 'Montserrat', sans-serif; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+        
+        .video-card { 
+            background: var(--white); 
+            border-radius: 24px; 
+            padding: 3rem 2.5rem; 
+            max-width: 800px; 
+            width: 100%;
+            box-shadow: 0 15px 35px rgba(30, 58, 138, 0.06);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .card-header { text-align: center; margin-bottom: 2.5rem; }
+        .card-title { font-family: 'Lora', serif; font-size: 2.4rem; color: var(--primary); margin-bottom: 0.5rem; }
+        
+        /* Красивый блок с вашим текстом */
+        .notice-box { 
+            background: #eff6ff; 
+            border-left: 4px solid var(--primary); 
+            padding: 1.5rem; 
+            margin-bottom: 2.5rem; 
+            border-radius: 0 12px 12px 0;
+            font-size: 1.1rem;
+            color: #1e40af;
+            font-weight: 500;
+        }
+        .notice-box strong {
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.4rem;
+            font-size: 1.2rem;
+            font-family: 'Lora', serif;
+        }
+        
+        /* Сетка для двух видео */
+        .video-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 2rem; 
+        }
+        .video-wrapper { 
+            position: relative; 
+            padding-bottom: 56.25%; 
+            height: 0; 
+            overflow: hidden; 
+            border-radius: 16px; 
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08); 
+            background: #000; 
+        }
+        .video-wrapper iframe { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            border: 0; 
+        }
+        
+        @media (max-width: 768px) { 
+            .video-grid { grid-template-columns: 1fr; gap: 1.5rem; } 
+            .card-title { font-size: 1.9rem; }
+            .video-card { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="video-card">
+        <div class="card-header">
+            <h1 class="card-title">Видеоразбор соревнований</h1>
+        </div>
+
+        <!-- Ваш текст-заметка -->
+        <div class="notice-box">
+            <strong>Обратите внимание!</strong>
+            Обратите внимание на движения собаки при прохождении препятствий, как она управляет своим телом, чтобы не упасть, приземлиться, прыгнуть... Видео с соревнований добавлены для наглядного понимания теории.
+        </div>
+
+        <!-- Блок с двумя видео роликами -->
+        <div class="video-grid">
+            <div class="video-wrapper">
+                <iframe src="https://youtube.com" allowfullscreen></iframe>
+            </div>
+            <div class="video-wrapper">
+                <iframe src="https://youtube.com" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
