@@ -3,11 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Видеогалерея</title>
+    <title>Видеоразбор: Биомеханика аджилити</title>
+    <!-- Подключаем стильные и современные шрифты -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lora:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --primary: #1e3a8a;
+            --accent: #f59e0b;
+            --text: #2c3e50;
+            --bg: #f0f4f8;
+            --white: #ffffff;
+        }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
-            background-color: #0f172a; /* Стильный темно-синий фон */
+            background-color: var(--bg); 
+            color: var(--text); 
+            line-height: 1.7; 
+            font-family: 'Montserrat', sans-serif; 
             display: flex;
             align-items: center;
             justify-content: center;
@@ -15,54 +30,103 @@
             padding: 2rem 1rem;
         }
         
-        /* Сетка для двух видеороликов */
-        .video-container { 
+        .video-card { 
+            background: var(--white); 
+            border-radius: 24px; 
+            padding: 3.5rem 2.5rem; 
+            max-width: 850px; 
+            width: 100%;
+            box-shadow: 0 15px 35px rgba(30, 58, 138, 0.06);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .card-header { text-align: center; margin-bottom: 2rem; }
+        .card-title { font-family: 'Lora', serif; font-size: 2.3rem; color: var(--primary); margin-bottom: 0.5rem; }
+        .card-subtitle { font-size: 1.2rem; color: #4b5563; font-weight: 600; font-family: 'Lora', serif; font-style: italic; margin-bottom: 1.5rem; line-height: 1.4; text-align: left; }
+        
+        /* Блок с вашим авторским анализом */
+        .analysis-box { 
+            background: #eff6ff; 
+            border-left: 4px solid var(--primary); 
+            padding: 1.8rem; 
+            margin-bottom: 2.5rem; 
+            border-radius: 0 16px 16px 0;
+            font-size: 1.05rem;
+            color: #374151;
+        }
+        .analysis-box ul {
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+        }
+        .analysis-box li {
+            margin-bottom: 0.9rem;
+        }
+        
+        /* Сетка для личных видеороликов */
+        .video-grid { 
             display: grid; 
             grid-template-columns: 1fr 1fr; 
-            gap: 2.5rem; 
-            max-width: 1100px;
-            width: 100%;
+            gap: 2rem; 
+            margin-bottom: 1.5rem;
         }
-        
-        .video-box {
-            width: 100%;
-            background: #000000;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-            border: 2px solid #1e293b;
-        }
-        
-        video {
-            width: 100%;
-            height: auto;
+        .video-item { 
+            width: 100%; 
+            border-radius: 16px; 
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08); 
+            background: #000;
             display: block;
-            outline: none;
+        }
+        
+        .footer-note {
+            text-align: center;
+            font-size: 1.05rem;
+            color: #1e3a8a;
+            margin-top: 2rem;
+            font-weight: 600;
         }
         
         @media (max-width: 768px) { 
-            .video-container { grid-template-columns: 1fr; gap: 1.5rem; } 
+            .video-grid { grid-template-columns: 1fr; gap: 1.5rem; } 
+            .card-title { font-size: 1.8rem; }
+            .video-card { padding: 2rem 1.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="video-container">
-        <!-- Первое плеер-видео -->
-        <div class="video-box">
-            <video controls>
-                <source src="video1.mp4" type="video1/mp4">
-                Ваш браузер не поддерживает видео файлы.
-            </video>
+    <div class="video-card">
+        <div class="card-header">
+            <h1 class="card-title">Видеоразбор соревнований</h1>
         </div>
-        
-        <!-- Второе плеер-видео -->
-        <div class="video-box">
-            <video controls>
-                <source src="video2.mp4" type="video2/mp4">
-                Ваш браузер не поддерживает видео файлы.
-            </video>
+
+        <!-- Ваш точный текст разбора -->
+        <div class="analysis-box">
+            <div class="card-subtitle">Аджилити — это физика в движении. Как центр массы влияет на прохождение трассы?</div>
+            <p>На этих видео отлично видна разница в биомеханике собак разных габаритов:</p>
+            <ul>
+                <li><strong>Бордер-колли (крупная собака)</strong> обладает мощным импульсом. Чтобы вписаться в крутой поворот на высокой скорости, ей приходится сильнее прижиматься к земле и сильнее смещать свой центр массы, активно компенсируя центробежную силу. Каждое её приземление после барьера — это точный расчет траектории и угла толчка.</li>
+                <li><strong>Собака поменьше</strong> имеет меньшую массу и другую длину рычагов (лап). Ей требуется меньше усилий для изменения направления движения, поэтому её траектории более компактные, а управление кинетической энергией происходит мгновенно.</li>
+                <li><strong>Задача человека</strong> в обоих случаях — вовремя показать телом правильный вектор движения, чтобы собака успела подготовить свое тело к маневру.</li>
+            </ul>
         </div>
+
+        <!-- Блок с вашими видеофайлами -->
+        <div class="video-grid">
+            <div class="video-item">
+                <video width="100%" height="100%" controls style="border-radius:16px; display:block;">
+                    <source src="video1.mp4.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+            </div>
+            <div class="video-item">
+                <video width="100%" height="100%" controls style="border-radius:16px; display:block;">
+                    <source src="video2.mp4.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+            </div>
+        </div>
+
+        <p class="footer-note">Посмотрите оба ролика еще раз: вы наглядно увидите, как законы механики работают для разных пропорций и весовых категорий!</p>
     </div>
 
 </body>
